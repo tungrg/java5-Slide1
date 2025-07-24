@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title th:text="${title}">Page Title</title>
+</head>
+
+<body>
+    <h2> Form nhap thong tin sinh vien</h2>
+    <b th:text="${message}"></b>
+    <form th:object="${student}" th:action="@{/student/save}" method ="post">
+        Email: <input th:field="*{email}" /><i th:errors="*{email}"></i><br />
+        Ho ten: <input th:field="*{fullName}" /><i th:errors="*{fullName}"></i><br />
+        Gioi tinh:
+        <input th:field="*{gender}" type="radio" th:value="true" /> Nam
+        <input th:field="*{gender}" type="radio" th:value="false" /> Nu <br />
+        Ngay sinh (yyyy-mm-dd): <input th:field="*{birthDate}" type="date"/><br />
+        Diem trung binh: <input th:field="*{mark}" /><i th:errors="*{mark}"></i><br />
+        Anh: <input th:field="*{photo}" /><i th:errors="*{photo}"></i><br />
+        <input type="submit" value="Save Student" />
+    </form>
+</body>
+
+</html>
