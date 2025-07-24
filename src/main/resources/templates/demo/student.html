@@ -8,10 +8,10 @@
 <body>
     <h2> Thong tin sinh vien</h2>
     <ul th:object="${student}">
-        <li th:text="*{#strings.capitalizeWords(name)}">Ho ten: </li>
-        <li th:text="*{gender}">Gioi tinh: </li>
+        <li th:text="*{#strings.capitalizeWords(fullName)}">Ho ten: </li>
+        <li th:text="*{gender ? 'Nam' : 'Nu'}">Gioi tinh: </li>
+        <li th:text="*{dateOfBirth}">Ngay sinh: </li>
         <li th:text="*{averageScore}"> Diem trung binh</li>
-        <li th:text="*{age}">Tuoi: </li>
         <li th:text="*{image}">Anh </li>
         <li th:text="${session.var1}"> Session</li>
         <th:block th:if="*{averageScore} > 8">

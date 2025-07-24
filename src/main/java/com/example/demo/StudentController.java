@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.Date;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,10 +13,10 @@ public class StudentController {
     @RequestMapping("/poly/student")
     public String student(Model model) {
         Student student = Student.builder()
-                .name("nguyen van a")
-                .gender("nam")
+                .fullName("nguyen van a")
+                .gender(true)
                 .averageScore(8.5)
-                .age(20)
+                .dateOfBirth(new Date())
                 .image("https://example.com/image.jpg")
                 .build();
         model.addAttribute("student", student);
